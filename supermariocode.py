@@ -1,5 +1,3 @@
-
-
 import sys
 import os
 import time
@@ -25,8 +23,7 @@ def title_screen():
     print("PLAY")
     print("HELP")
     print("QUIT")
-    print("What would you like to do?)
-    option = input(">>> ")
+    option = input("What would you like to do? >>> ")
     if option.lower() == ("play"):
         game_setup()
     elif option.lower() == ("help"):
@@ -306,15 +303,16 @@ def player_look():
 
 #this is the actual game part
 def game():
-    while player.gameOver == False: #this keeps the game going until its over
-        prompt() #solving puzzles for game/ finishing the track since its mario cart?
+    while playerOne.gameOver == False: #this keeps the game going until its over
+        prompt()
 
 
 #game setup
 def game_setup():
     os.system('cls')
+
     #getting the players name
-    questionName = "Hello PLAYER, what is your name?\n"
+    questionName = "Hello PLAYER, what is your name?"
     #cool thing i learned online to make it print fancy like a game
     for words in questionName:
         sys.stdout.write(words)
@@ -324,7 +322,7 @@ def game_setup():
     playerOne.name = playerName
 
     # getting the character the player wants to use
-    characterOptions = "The characters you can play as are Mario, Luigi, Kerby, and Bowser.\n"
+    characterOptions = "The characters you can play as are Mario, Luigi, Kerby, and Bowser. \n"
     for words in characterOptions:
         sys.stdout.write(words)
         sys.stdout.flush()
@@ -349,31 +347,31 @@ def game_setup():
 
     #setting up character stats
     if playerOne is "mario":
-        self.hp = 50
-        self.coins = 50
+        playerOne.hp = 50
+        playerOne.coins = 50
     if playerOne is "luigi":
-        self.hp = 55
-        self.coins = 45
+        playerOne.hp = 55
+        playerOne.coins = 45
     if playerOne is "kerby":
-        self.hp = 80
-        self.coins = 20
+        playerOne.hp = 80
+        playerOne.coins = 20
     if playerOne is "bowser":
-        self.hp = 20
-        self.coins = 80
+        playerOne.hp = 20
+        playerOne.coins = 80
 
     #introduction to the game
-    questionWelcome = "Welcome, " + playerName + ". " + "You are playing as " + playerCharacter + ".\n "
+    questionWelcome = "Welcome, " + playerName + ". " + "You are playing as " + playerCharacter + ". "
     for words in questionWelcome:
         sys.stdout.write(words)
         sys.stdout.flush()
         time.sleep(0.05)
 
-    intro1 = "This is Super Mario Code! \n"
+    intro1 = "Welcome to Super Mario Code! \n"
     for words in intro1:
         sys.stdout.write(words)
         sys.stdout.flush()
         time.sleep(0.01)
-    intro2 = "Make your way through the course to win the game. \n "
+    intro2 = "Make your way through the course to win the game.\n"
     for words in intro2:
         sys.stdout.write(words)
         sys.stdout.flush()
@@ -395,6 +393,3 @@ def game_setup():
     game()
 
 title_screen()
-
-
-
