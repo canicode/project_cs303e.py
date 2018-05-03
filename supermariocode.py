@@ -329,7 +329,7 @@ def game_setup():
         sys.stdout.write(words)
         sys.stdout.flush()
         time.sleep(0.01)
-    questionCharacter = " What character would you like to use? \n"
+    questionCharacter = " What character would you like to use, " + playerName + "?\n"
     for words in questionCharacter:
         sys.stdout.write(words)
         sys.stdout.flush()
