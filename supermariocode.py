@@ -250,7 +250,7 @@ gameMap = {
 #this prints where the player is at in the map
 def print_location():
     print(playerOne.location.upper())
-    print( gameMap[playerOne.position][description])
+    print( gameMap[playerOne.location][description])
 
 
 #actions that the player can take PROMPT
@@ -287,9 +287,9 @@ def player_move(playerAction):
         movement_controller(destination)
 
 #more code to control the movement of the player
-def movement_controller():
+def movement_controller(destination):
     destination = playerOne.location
-    print ("You have moved to the" + destination)
+    print ("You have moved to the " + destination + ".")
     print_location()
 
 #for looking at or examining the spot... trivia questions go here
@@ -393,3 +393,4 @@ def game_setup():
     game()
 
 title_screen()
+
