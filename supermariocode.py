@@ -10,7 +10,7 @@ class player:
         self.character = ""
         self.hp = 0
         self.coins = 0
-        self.location = "Start Point"
+        self.location = "a1"
         self.gameOver = False
 
 playerOne = player()
