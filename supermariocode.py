@@ -25,7 +25,8 @@ def title_screen():
     print("PLAY")
     print("HELP")
     print("QUIT")
-    option = input("What would you like to do? >>> ")
+    print("What would you like to do?)
+    option = input(">>> ")
     if option.lower() == ("play"):
         game_setup()
     elif option.lower() == ("help"):
@@ -323,7 +324,7 @@ def game_setup():
     playerOne.name = playerName
 
     # getting the character the player wants to use
-    characterOptions = "The characters you can play as are Mario, Luigi, Kerby, and Bowser. \n"
+    characterOptions = "The characters you can play as are Mario, Luigi, Kerby, and Bowser.\n"
     for words in characterOptions:
         sys.stdout.write(words)
         sys.stdout.flush()
@@ -361,13 +362,13 @@ def game_setup():
         self.coins = 80
 
     #introduction to the game
-    questionWelcome = "Welcome, " + playerName + ". " + "You are playing as " + playerCharacter + ". "
+    questionWelcome = "Welcome, " + playerName + ". " + "You are playing as " + playerCharacter + ".\n "
     for words in questionWelcome:
         sys.stdout.write(words)
         sys.stdout.flush()
         time.sleep(0.05)
 
-    intro1 = "Welcome to Super Mario Code! \n"
+    intro1 = "This is Super Mario Code! \n"
     for words in intro1:
         sys.stdout.write(words)
         sys.stdout.flush()
