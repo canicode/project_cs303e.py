@@ -1,2 +1,2 @@
 # project_cs303e.py
-#this is a project for cs303e
+The game will be a simpler version of Mario Kart where users can solve challenges to collect coins when they complete activities (math problems, trivia questions, etc.)
