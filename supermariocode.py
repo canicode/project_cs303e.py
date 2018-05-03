@@ -332,7 +332,7 @@ def game_setup():
         sys.stdout.flush()
         time.sleep(0.01)
     questionCharacter = "What character would you like to use?"
-    for words in questionName:
+    for words in questionCharacter:
         sys.stdout.write(words)
         sys.stdout.flush()
         time.sleep(0.05)
