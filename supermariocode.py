@@ -20,8 +20,37 @@ playerOne = player()
 #title screen using a function and using if statements
 #ENTER CODE HERE
 
-def game_start():
-    print("Welcome to Super Mario Code! ")#add more to it later
+def title_screen():
+    print("Welcome to Super Mario Code.")
+    print("PLAY")
+    print("HELP")
+    print("QUIT")
+    option = input("What would you like to do? >>> ")
+    if option.lower() == ("play"):
+        game_setup()
+    elif option.lower() == ("help"):
+        help_menu()
+    elif option.lower() == ("quit"):
+        sys.exit()
+    while option.lower() not in ["play", "help", "quit"]:
+        print("Unknown command. Please enter a valid command.")
+        option = input("What would you like to do? >>> ")
+        if option.lower() == ("play"):
+            game_setup()
+        elif option.lower() == ("help"):
+            help_menu()
+        elif option.lower() == ("quit"):
+            sys.exit()
+    title_screen()
+
+def help_menu():
+    print("Hello. Welcome to Super Mario Code.")
+    print("You can play as Mario, Luigi, Kerby, or Bowser")
+    print("To move, use up, down, left, or right.")
+    print("To inspect a spot in the map, use examine.")
+    print("Good luck, and don't die!")
+    title_screen()
+
 
 
 
@@ -367,7 +396,7 @@ def game_setup():
     print("The game will start NOW!")
     game()
 
-
+title_screen()
 
 
 
