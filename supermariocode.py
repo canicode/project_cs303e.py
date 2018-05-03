@@ -55,7 +55,6 @@ def help_menu():
 
 
 
-
 #creating the map - grid system
 
 #  1   2   3   4
@@ -83,8 +82,7 @@ moveRight = "right"
 solvedPlaces = {"a1": False, "a2": False, "a3": False, "a4": False,
                 "b1": False, "b2": False, "b3": False, "b4": False,
                 "c1": False, "c2": False, "c3": False, "c4": False,
-                "d1": False, "d2": False, "d3": False, "d4": False,
-                "e1": False, "e2": False, "e3": False, "e4": False,}
+                "d1": False, "d2": False, "d3": False, "d4": False,}
 #setting up the map
 gameMap = {
     "a1": {
@@ -313,7 +311,7 @@ def game():
 
 #game setup
 def game_setup():
-    os.system("clear")
+    os.system('cls')
 
     #getting the players name
     questionName = "Hello PLAYER, what is your name?"
@@ -326,12 +324,12 @@ def game_setup():
     playerOne.name = playerName
 
     # getting the character the player wants to use
-    characterOptions = "The characters you can play as are Mario, Luigi, Kerby, and Bowser."
+    characterOptions = "The characters you can play as are Mario, Luigi, Kerby, and Bowser. \n"
     for words in characterOptions:
         sys.stdout.write(words)
         sys.stdout.flush()
         time.sleep(0.01)
-    questionCharacter = "What character would you like to use?"
+    questionCharacter = " What character would you like to use? \n"
     for words in questionCharacter:
         sys.stdout.write(words)
         sys.stdout.flush()
@@ -347,7 +345,7 @@ def game_setup():
         playerCharacter = input("Unknown character. Please enter a character in this game. >>>")
         if playerCharacter.lower() in validCharacters:
             playerOne.character = playerCharacter
-            print("You are now " + playerCharacter)
+            print("You are now " + playerCharacter + ".")
 
     #setting up character stats
     if playerOne is "mario":
@@ -364,43 +362,38 @@ def game_setup():
         self.coins = 80
 
     #introduction to the game
-    questionWelcome = "Welcome, " + playerName + "." + "You are playing as " + playerCharacter + "."
+    questionWelcome = "Welcome, " + playerName + ". " + "You are playing as " + playerCharacter + ". "
     for words in questionWelcome:
         sys.stdout.write(words)
         sys.stdout.flush()
         time.sleep(0.05)
 
-    intro1 = "Welcome to Super Mario Code!"
+    intro1 = "Welcome to Super Mario Code! \n"
     for words in intro1:
         sys.stdout.write(words)
         sys.stdout.flush()
         time.sleep(0.01)
-    intro2 = "Make your way through the course to win the game"
+    intro2 = "Make your way through the course to win the game. \n "
     for words in intro2:
         sys.stdout.write(words)
         sys.stdout.flush()
         time.sleep(0.01)
-    intro3 = "I hope you have fun, but..."
+    intro3 = "I hope you have fun, but... \n"
     for words in intro3:
         sys.stdout.write(words)
         sys.stdout.flush()
         time.sleep(0.01)
-    intro4 = "Do NOT exit the map..... or else."
+    intro4 = "Do NOT exit the map..... or else. \n"
     for words in intro4:
         sys.stdout.write(words)
         sys.stdout.flush()
         time.sleep(0.01)
 
 
-    os.system("clear")
+    os.system('cls')
     print("The game will start NOW!")
     game()
 
 title_screen()
 
 
-
-
-
-
-#call start screen function
