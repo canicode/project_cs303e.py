@@ -300,7 +300,7 @@ def player_look():
     else:
         print("")
         
-def questions_answers():
+def get_trivia_questions():
     questions_answers = {"What was Mario's original name before he was named Mario?":Jumpan,"When was the first Mario game created?":1981,
                          "What kind of extinct animal is Yoshi?":Dinosaur,"Who is Luigi's doppelganger?":Waluigi,
                          "Who is Mario's doppelganger?":Wario,"Who kidnapped the princess in the original Super Mario?":Bowser,
