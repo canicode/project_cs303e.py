@@ -23,7 +23,8 @@ def title_screen():
     print("PLAY")
     print("HELP")
     print("QUIT")
-    option = input("What would you like to do? >>> ")
+    print('What would you like to do?')
+    option = input(">>> ")
     if option.lower() == ("play"):
         game_setup()
     elif option.lower() == ("help"):
@@ -32,7 +33,8 @@ def title_screen():
         sys.exit()
     while option.lower() not in ["play", "help", "quit"]:
         print("Unknown command. Please enter a valid command.")
-        option = input("What would you like to do? >>> ")
+        print('What would you like to do?')
+        option = input(">>> ")
         if option.lower() == ("play"):
             game_setup()
         elif option.lower() == ("help"):
@@ -259,12 +261,14 @@ def print_location():
 #actions that the player can take PROMPT
 def prompt():
     print( "You can move, go, travel, walk, quit, examine, inspect, and look.")
-    action = input("What would you like to do? >>> ")
+    print("What would you like to do?")
+    action = input(">>> ")
     acceptableActions = ["move", "go", "travel", "walk", "quit", "examine", "inspect", "look"]
     #if they dont put in an acceptable action...
     while action.lower() not in acceptableActions:
         print("Undefined action. Please enter an acceptable action.")
-        action = input("What would you like to do? >>> ")
+        print("What would you like to do?")
+        action = input(">>> ")
     if action.lower() == "quit":
         sys.exit()
     elif action.lower() in ["move", "go", "travel", "walk"]:
@@ -275,7 +279,8 @@ def prompt():
 #for moving the player with answers from the player
 def player_move(playerAction):
     print("You can move up, down, left, or right. Be sure not to move outside of the map!")
-    destination = input("Where would you like to go? >>> ")
+    print('Where would you like to go?')
+    destination = input(">>> ")
     if destination in ["up"]:
         destination = gameMap[playerOne.location][moveUp]
         movement_controller(destination)
