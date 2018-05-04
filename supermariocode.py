@@ -23,8 +23,7 @@ def title_screen():
     print("PLAY")
     print("HELP")
     print("QUIT")
-    print('What would you like to do?')
-    option = input(">>> ")
+    option = input("What would you like to do? >>> ")
     if option.lower() == ("play"):
         game_setup()
     elif option.lower() == ("help"):
@@ -33,8 +32,7 @@ def title_screen():
         sys.exit()
     while option.lower() not in ["play", "help", "quit"]:
         print("Unknown command. Please enter a valid command.")
-        print('What would you like to do?')
-        option = input(">>> ")
+        option = input("What would you like to do? >>> ")
         if option.lower() == ("play"):
             game_setup()
         elif option.lower() == ("help"):
@@ -261,14 +259,12 @@ def print_location():
 #actions that the player can take PROMPT
 def prompt():
     print( "You can move, go, travel, walk, quit, examine, inspect, and look.")
-    print("What would you like to do?")
-    action = input(">>> ")
+    action = input("What would you like to do? >>> ")
     acceptableActions = ["move", "go", "travel", "walk", "quit", "examine", "inspect", "look"]
     #if they dont put in an acceptable action...
     while action.lower() not in acceptableActions:
         print("Undefined action. Please enter an acceptable action.")
-        print("What would you like to do?")
-        action = input(">>> ")
+        action = input("What would you like to do? >>> ")
     if action.lower() == "quit":
         sys.exit()
     elif action.lower() in ["move", "go", "travel", "walk"]:
@@ -279,8 +275,7 @@ def prompt():
 #for moving the player with answers from the player
 def player_move(playerAction):
     print("You can move up, down, left, or right. Be sure not to move outside of the map!")
-    print('Where would you like to go?')
-    destination = input(">>> ")
+    destination = input("Where would you like to go? >>> ")
     if destination in ["up"]:
         destination = gameMap[playerOne.location][moveUp]
         movement_controller(destination)
@@ -348,7 +343,7 @@ def game_setup():
         playerOne.character = playerCharacter
         print("You are now " + playerCharacter)
     while playerCharacter.lower() not in validCharacters:
-        playerCharacter = input("Unknown character. Please enter a character in this game. >>>")
+        playerCharacter = input("Unknown character. Please enter a character in this game. >>> \n")
         if playerCharacter.lower() in validCharacters:
             playerOne.character = playerCharacter
             print("You are now " + playerCharacter + ".")
