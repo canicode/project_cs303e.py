@@ -240,14 +240,13 @@ def get_trivia_questions():
                 "Who did Mario originally rescue them?", "Are the Mario games the most successful video game series of all time?",
                 "Mario's first 3D platforming game is?", "Which game introduced the Cloud Flower?",
                 "Which console hosted the Super Mario Maker game?"
-]
+                ]
     
     
     getAnswers = ["jumpman", "1981", "dinosaur", "waluigi", "wario", "bowser",
-                  "shigeru miyamoto", "princess daisy", "donkey kong", "luigi", "Donkey Kong",
-                  "Pauline", "Yes", "Super Mario 64", "Super Mario Galaxy", "Nintindo WiiU"
-
- ]
+                  "shigeru miyamoto", "princess daisy", "donkey kong", "luigi", "donkey kong",
+                  "pauline", "yes", "sper mario 64", "super mario galaxy", "nintindo wiiu"
+                  ]
 
     for x in range(len(getQuestions)):
         print(getQuestions[x])
