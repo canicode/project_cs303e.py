@@ -9,7 +9,6 @@ class player:
         self.name = ""
         self.character = ""
         self.hp = 0
-        self.coins = 0
         self.location = "a1"
         self.gameOver = False
 
@@ -42,29 +41,14 @@ def title_screen():
     title_screen()
 
 def help_menu():
-    print("Hello. Welcome to Super Mario Code.")
-    print("You can play as Mario, Luigi, Kerby, or Bowser")
+    print("Hello. Welcome to the game.")
+    print("You can play as Mario, Luigi, or Kerby.")
     print("To move, use up, down, left, or right.")
     print("To inspect a spot in the map, use examine.")
     print("Good luck, and don't die!")
     title_screen()
 
 
-
-
-
-#creating the map - grid system
-
-#  1   2   3   4
-#------------------
-#|   |   |   |   |  a
-#------------------
-#|   |   |   |   |  b
-#------------------
-#|   |   |   |   |  c
-#------------------
-#|   |   |   |   |  d
-#------------------
 
 #navigating the map
 solved = False
@@ -297,7 +281,7 @@ def game_setup():
     playerOne.name = playerName
 
     # getting the character the player wants to use
-    characterOptions = "The characters you can play as are Mario, Luigi, Kerby, and Bowser. \n"
+    characterOptions = "The characters you can play as are Mario, Luigi, and Kerby. \n"
     for words in characterOptions:
         sys.stdout.write(words)
         sys.stdout.flush()
@@ -310,7 +294,7 @@ def game_setup():
     playerCharacter = input(">>> ")
 
     #check to see if the character is valid
-    validCharacters = ["mario", "luigi", "kerby", "bowser"]
+    validCharacters = ["mario", "luigi", "kerby"]
     if playerCharacter.lower() in validCharacters:
         playerOne.character = playerCharacter
         print("You are now " + playerCharacter)
@@ -322,17 +306,12 @@ def game_setup():
 
     #setting up character stats
     if playerOne is "mario":
-        playerOne.hp = 50
-        playerOne.coins = 50
+        playerOne.hp = 3
     if playerOne is "luigi":
-        playerOne.hp = 55
-        playerOne.coins = 45
+        playerOne.hp = 4
     if playerOne is "kerby":
-        playerOne.hp = 80
-        playerOne.coins = 20
-    if playerOne is "bowser":
-        playerOne.hp = 20
-        playerOne.coins = 80
+        playerOne.hp = 5
+
 
     #introduction to the game
     questionWelcome = "Welcome, " + playerName + ". " + "You are playing as " + playerCharacter + ". "
@@ -341,7 +320,7 @@ def game_setup():
         sys.stdout.flush()
         time.sleep(0.05)
 
-    intro1 = "Welcome to Super Mario Code! \n"
+    intro1 = "Welcome to Boo's Mansion Maze! \n"
     for words in intro1:
         sys.stdout.write(words)
         sys.stdout.flush()
