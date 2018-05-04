@@ -301,11 +301,11 @@ def player_look():
         print("")
         
 def get_trivia_questions():
-    questions_answers = {"What was Mario's original name before he was named Mario?":Jumpan,"When was the first Mario game created?":1981,
-                         "What kind of extinct animal is Yoshi?":Dinosaur,"Who is Luigi's doppelganger?":Waluigi,
-                         "Who is Mario's doppelganger?":Wario,"Who kidnapped the princess in the original Super Mario?":Bowser,
-                         "Who created Mario?":Shigeru Miyamoto,"Who is Princess Peach's best friend?":Princess Daisy,
-                         "Who is Mario's banana-loving enemy?":Donkey Kong,"Who is Mario's brother and sidekick?":Luigi}
+    questions_answers = {"What was Mario's original name before he was named Mario?":"Jumpan","When was the first Mario game created?":"1981",
+                         "What kind of extinct animal is Yoshi?":"Dinosaur","Who is Luigi's doppelganger?":"Waluigi",
+                         "Who is Mario's doppelganger?":"Wario","Who kidnapped the princess in the original Super Mario?":"Bowser",
+                         "Who created Mario?":"Shigeru Miyamoto","Who is Princess Peach's best friend?":"Princess Daisy",
+                         "Who is Mario's banana-loving enemy?":"Donkey Kong","Who is Mario's brother and sidekick?":"Luigi"}
     
 #this is the actual game part
 def game():
