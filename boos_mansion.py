@@ -71,11 +71,11 @@ def help_menu():
 
 
 #navigating the map
-solved = False
 moveUp = "up"
 moveDown = "down"
 moveLeft = "left"
 moveRight = "right"
+escape = False
 
 #dictionary of all the solved places
 solvedPlaces = {"a1": False, "a2": False, "a3": False, "a4": False,
@@ -88,97 +88,113 @@ gameMap = {
         moveUp: "dead",
         moveDown: "b1",
         moveLeft: "dead",
-        moveRight: "a2"
+        moveRight: "a2",
+        escape: False
     },
     "a2": {
         moveUp: "dead",
         moveDown: "b2",
         moveLeft: "a1",
-        moveRight: "a3"
+        moveRight: "a3",
+        escape: False
     },
     "a3": {
         moveUp: "dead",
         moveDown: "b3",
         moveLeft: "b2",
-        moveRight: "b4"
+        moveRight: "b4",
+        escape: False
     },
     "a4": {
         moveUp: "dead",
         moveDown: "b4",
         moveLeft: "b3",
-        moveRight: "dead"
+        moveRight: "dead",
+        escape: False
     },
     "b1": {
         moveUp: "a1",
         moveDown: "c1",
         moveLeft: "dead",
-        moveRight: "b2"
+        moveRight: "b2",
+        escape: False
     },
     "b2": {
         moveUp: "a2",
         moveDown: "c2",
         moveLeft: "b1",
-        moveRight: "b3"
+        moveRight: "b3",
+        escape: False
     },
     "b3": {
         moveUp: "a3",
         moveDown: "c3",
         moveLeft: "b2",
-        moveRight: "b4"
+        moveRight: "b4",
+        escape: False
     },
     "b4": {
         moveUp: "a4",
         moveDown: "c4",
         moveLeft: "b3",
-        moveRight: "dead"
+        moveRight: "dead",
+        escape: False
     },
     "c1": {
         moveUp: "b1",
         moveDown: "d1",
         moveLeft: "dead",
-        moveRight: "c2"
+        moveRight: "c2",
+        escape: False
     },
     "c2": {
         moveUp: "b2",
         moveDown: "d2",
         moveLeft: "c1",
-        moveRight: "c3"
+        moveRight: "c3",
+        escape: False
     },
     "c3": {
         moveUp: "b3",
         moveDown: "d3",
         moveLeft: "c2",
-        moveRight: "c4"
+        moveRight: "c4",
+        escape: True
     },
     "c4": {
         moveUp: "b4",
         moveDown: "d4",
         moveLeft: "c3",
-        moveRight: "dead"
+        moveRight: "dead",
+        escape: False
     },
     "d1": {
         moveUp: "c1",
         moveDown: "dead",
         moveLeft: "dead",
-        moveRight: "d2"
+        moveRight: "d2",
+        escape: False
     },
     "d2": {
         moveUp: "c2",
         moveDown: "dead",
         moveLeft: "d1",
-        moveRight: "d3"
+        moveRight: "d3",
+        escape: False
     },
     "d3": {
         moveUp: "c3",
         moveDown: "dead",
         moveLeft: "d2",
-        moveRight: "d4"
+        moveRight: "d4",
+        escape: False
     },
     "d4": {
         moveUp: "c4",
         moveDown: "dead",
         moveLeft: "d3",
-        moveRight: "dead"
+        moveRight: "dead",
+        escape: False
     },
 
 }
@@ -245,19 +261,15 @@ def get_trivia_questions():
 
     getQuestions = ["What was Mario's original name before he was named Mario?",
                     "When was the first Mario game created?",
-                    "What kind of extinct animal is Yoshi?",
-                    "Who is Luigi's doppelganger?",
+                    "What kind of extinct animal is Yoshi?", "Who is Luigi's doppelganger?",
                     "Who is Mario's doppelganger?",
-                    "Who kidnapped the princess in the original Super Mario?", 
-                    "Who created Mario?",
+                    "Who kidnapped the princess in the original Super Mario?", "Who created Mario?",
                     "Who is Princess Peach's best friend?",
-                    "Who is Mario's banana-loving enemy?", 
-                    "Who is Mario's brother and sidekick?",
+                    "Who is Mario's banana-loving enemy?", "Who is Mario's brother and sidekick?",
                     "What game did Mario first appear in?",
                     "Who did Mario originally rescue them?",
                     "Are the Mario games the most successful video game series of all time?",
-                    "Mario's first 3D platforming game is?", 
-                    "Which game introduced the Cloud Flower?",
+                    "Mario's first 3D platforming game is?", "Which game introduced the Cloud Flower?",
                     "Which console hosted the Super Mario Maker game?",
                     "What is the name of Mario’s aquatic backpack in Super Mario Sunshine?",
                     "Who is Mario’s main enemy in Super Mario Sunshine?",
