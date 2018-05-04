@@ -255,16 +255,13 @@ def get_trivia_questions():
                 "Who is Mario's banana-loving enemy?", "Who is Mario's brother and sidekick?", "What game did Mario first appear in?",
                 "Who did Mario originally rescue them?", "Are the Mario games the most successful video game series of all time?",
                 "Mario's first 3D platforming game is?", "Which game introduced the Cloud Flower?",
-                "Which console hosted the Super Mario Maker game?"]
-
-
-
-
-"
-", ]
+                "Which console hosted the Super Mario Maker game?"
+]
+    
+    
     getAnswers = ["jumpman", "1981", "dinosaur", "waluigi", "wario", "bowser",
                   "shigeru miyamoto", "princess daisy", "donkey kong", "luigi", "Donkey Kong",
-                  "Pauline", "Yes", "Super Mario 64", "Super Mario Galaxy", "Nintindo WiiU"]
+                  "Pauline", "Yes", "Super Mario 64", "Super Mario Galaxy", "Nintindo WiiU"
 
  ]
 
