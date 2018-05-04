@@ -241,17 +241,28 @@ def player_is_question_solved():
 
 def get_trivia_questions():
 
-    getQuestions = ["What was Mario's original name before he was named Mario?","When was the first Mario game created?",
-                    "What kind of extinct animal is Yoshi?","Who is Luigi's doppelganger?", "Who is Mario's doppelganger?",
-                    "Who kidnapped the princess in the original Super Mario?", "Who created Mario?", "Who is Princess Peach's best friend?",
-                    "Who is Mario's banana-loving enemy?", "Who is Mario's brother and sidekick?", "What game did Mario first appear in?",
-                    "Who did Mario originally rescue them?", "Are the Mario games the most successful video game series of all time?",
+    getQuestions = ["What was Mario's original name before he was named Mario?",
+                    "When was the first Mario game created?",
+                    "What kind of extinct animal is Yoshi?", "Who is Luigi's doppelganger?",
+                    "Who is Mario's doppelganger?",
+                    "Who kidnapped the princess in the original Super Mario?", "Who created Mario?",
+                    "Who is Princess Peach's best friend?",
+                    "Who is Mario's banana-loving enemy?", "Who is Mario's brother and sidekick?",
+                    "What game did Mario first appear in?",
+                    "Who did Mario originally rescue them?",
+                    "Are the Mario games the most successful video game series of all time?",
                     "Mario's first 3D platforming game is?", "Which game introduced the Cloud Flower?",
-                    "Which console hosted the Super Mario Maker game?"
+                    "Which console hosted the Super Mario Maker game?",
+                    "What is the name of Mario’s aquatic backpack in Super Mario Sunshine?",
+                    "Who is Mario’s main enemy in Super Mario Sunshine?",
+                    "What game does baby Mario first make an appearance in?",
+                    "What Super Mario game is set in outer space?",
                     ]
-    getAnswers = ["jumpman", "1981", "dinosaur", "waluigi", "wario", "bowser", "shigeru miyamoto", "princess daisy",
-                  "donkey kong", "luigi",  "pauline", "yes", "super mario 64", "super mario galaxy", "nintindo wiiu"
-                    ]
+    
+    getAnswers = ["jumpman", "1981", "dinosaur", "waluigi", "wario", "bowser",
+                  "shigeru miyamoto", "princess daisy", "donkey kong", "luigi", "donkey kong",
+                  "pauline", "yes", "super mario 64", "super mario galaxy", "nintindo wiiu",
+                  "FLUDD”, “Shadow","Mario”, “Yoshi’s, Island”, “Super Mario", "Galaxy",]
 
     for x in range(len(getQuestions)):
         print(getQuestions[x])
