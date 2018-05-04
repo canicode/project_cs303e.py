@@ -42,29 +42,32 @@ def title_screen():
     title_screen()
 
 def help_menu():
-    print("Hello. Welcome to Super Mario Code.")
-    print("You can play as Mario, Luigi, Kerby, or Bowser")
-    print("To move, use up, down, left, or right.")
-    print("To inspect a spot in the map, use examine.")
-    print("Good luck, and don't die!")
-    title_screen()
+    #instructions = "You are stuck in Boo's Mansion.\nThe objective of the game is to find your way out.\nMove from room to room by correctly answering questions to search for the escape room.\nHowever, if you answer more than 4 questions incorrectly you will be stuck in Boo's Mansion\nFOREVERRR!!!\nHere is the map of the game, The x marks where you will begin.\nThe escape room is any one of the other 15 rooms"
+    file = open('instructions.txt', 'r')
+    for x in file:
+        for words in x:
+            sys.stdout.write(words)
+            sys.stdout.flush()
+            time.sleep(0.05)
+    print(' --- --- --- --- ')
+    print('| x |   |   |   |')
+    print(' --- --- --- --- ')
+    print('|   |   |   |   |')
+    print(' --- --- --- --- ')
+    print('|   |   |   |   |')
+    print(' --- --- --- --- ')
+    print('|   |   |   |   |')
+    print(' --- --- --- --- ')
+    print('Please type "ok" to continue:')
+    answer = input('')
+    if answer.lower() == 'ok':
+        title_screen()
+    else:
+        while answer.lower() != 'ok':
+            print('Invalid response, please type "ok" to continue')
+            answer = input('')
+        title_screen()
 
-
-
-
-
-#creating the map - grid system
-
-#  1   2   3   4
-#------------------
-#|   |   |   |   |  a
-#------------------
-#|   |   |   |   |  b
-#------------------
-#|   |   |   |   |  c
-#------------------
-#|   |   |   |   |  d
-#------------------
 
 #navigating the map
 nameOfZone = ""
