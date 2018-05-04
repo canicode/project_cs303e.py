@@ -19,7 +19,7 @@ playerOne = player()
 #ENTER CODE HERE
 
 def title_screen():
-    print("Welcome to Super Mario Code.")
+    print("Welcome to Boo's Mansion Maze!")
     print("PLAY")
     print("HELP")
     print("QUIT")
@@ -245,7 +245,7 @@ def player_is_question_solved():
     if gameMap[playerOne.location][solved] == True:
         print("You have already solved this zone.")
     else:
-        get_trivia_questions()
+        print("")
 
 def get_trivia_questions():
 
