@@ -51,7 +51,6 @@ def help_menu():
 
 
 #navigating the map
-solved = False
 moveUp = "up"
 moveDown = "down"
 moveLeft = "left"
@@ -65,112 +64,96 @@ solvedPlaces = {"a1": False, "a2": False, "a3": False, "a4": False,
 #setting up the map
 gameMap = {
     "a1": {
-        solved: False,
         moveUp: "",
         moveDown: "b1",
         moveLeft: "",
         moveRight: "a2"
     },
     "a2": {
-        solved: False,
         moveUp: "",
         moveDown: "b2",
         moveLeft: "a1",
         moveRight: "a3"
     },
     "a3": {
-        solved: False,
         moveUp: "",
         moveDown: "b3",
         moveLeft: "b2",
         moveRight: "b4"
     },
     "a4": {
-        solved: False,
         moveUp: "",
         moveDown: "b4",
         moveLeft: "b3",
         moveRight: ""
     },
     "b1": {
-        solved: False,
         moveUp: "a1",
         moveDown: "c1",
         moveLeft: "",
         moveRight: "b2"
     },
     "b2": {
-        solved: False,
         moveUp: "a2",
         moveDown: "c2",
         moveLeft: "b1",
         moveRight: "b3"
     },
     "b3": {
-        solved: False,
         moveUp: "a3",
         moveDown: "c3",
         moveLeft: "b2",
         moveRight: "b4"
     },
     "b4": {
-        solved: False,
         moveUp: "a4",
         moveDown: "c4",
         moveLeft: "b3",
         moveRight: ""
     },
     "c1": {
-        solved: False,
         moveUp: "b1",
         moveDown: "d1",
         moveLeft: "",
         moveRight: "c2"
     },
     "c2": {
-        solved: False,
         moveUp: "b2",
         moveDown: "d2",
         moveLeft: "c1",
         moveRight: "c3"
     },
     "c3": {
-        solved: False,
         moveUp: "b3",
         moveDown: "d3",
         moveLeft: "c2",
         moveRight: "c4"
     },
     "c4": {
-        solved: False,
         moveUp: "b4",
         moveDown: "d4",
         moveLeft: "c3",
         moveRight: ""
     },
     "d1": {
-        solved: False,
         moveUp: "c1",
         moveDown: "",
         moveLeft: "",
         moveRight: "d2"
     },
     "d2": {
-        solved: False,
         moveUp: "c2",
         moveDown: "",
         moveLeft: "d1",
         moveRight: "d3"
     },
     "d3": {
-        solved: False,
         moveUp: "c3",
         moveDown: "",
         moveLeft: "d2",
         moveRight: "d4"
     },
     "d4": {
-        solved: False,
         moveUp: "c4",
         moveDown: "",
         moveLeft: "d3",
