@@ -315,7 +315,7 @@ def game_setup():
     os.system('cls')
 
     #getting the players name
-    questionName = "Hello PLAYER, what is your name?"
+    questionName = "Hello PLAYER, what is your name?\n"
     #cool thing i learned online to make it print fancy like a game
     for words in questionName:
         sys.stdout.write(words)
@@ -330,7 +330,7 @@ def game_setup():
         sys.stdout.write(words)
         sys.stdout.flush()
         time.sleep(0.01)
-    questionCharacter = "What character would you like to use, " + playerName + "?"
+    questionCharacter = "What character would you like to use, " + playerName + "?\n"
     for words in questionCharacter:
         sys.stdout.write(words)
         sys.stdout.flush()
