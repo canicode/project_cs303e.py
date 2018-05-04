@@ -245,7 +245,7 @@ def player_is_question_solved():
     if gameMap[playerOne.location][solved] == True:
         print("You have already solved this zone.")
     else:
-        print("")
+        get_trivia_questions()
 
 def get_trivia_questions():
 
