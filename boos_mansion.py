@@ -59,13 +59,13 @@ def help_menu():
     print('|   |   |   |   |')
     print(' --- --- --- --- ')
     print('Please type "ok" to continue:')
-    answer = raw_input('')
+    answer = input('')
     if answer.lower() == 'ok':
         title_screen()
     else:
         while answer.lower() != 'ok':
             print('Invalid response, please type "ok" to continue')
-            answer = raw_input('')
+            answer = input('')
         title_screen()
 
 
