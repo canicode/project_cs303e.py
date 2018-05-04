@@ -84,33 +84,33 @@ solvedPlaces = {"a1": False, "a2": False, "a3": False, "a4": False,
 #setting up the map and where you can move
 gameMap = {
     "a1": {
-        moveUp: "",
+        moveUp: "dead",
         moveDown: "b1",
-        moveLeft: "",
+        moveLeft: "dead",
         moveRight: "a2"
     },
     "a2": {
-        moveUp: "",
+        moveUp: "dead",
         moveDown: "b2",
         moveLeft: "a1",
         moveRight: "a3"
     },
     "a3": {
-        moveUp: "",
+        moveUp: "dead",
         moveDown: "b3",
         moveLeft: "b2",
         moveRight: "b4"
     },
     "a4": {
-        moveUp: "",
+        moveUp: "dead",
         moveDown: "b4",
         moveLeft: "b3",
-        moveRight: ""
+        moveRight: "dead"
     },
     "b1": {
         moveUp: "a1",
         moveDown: "c1",
-        moveLeft: "",
+        moveLeft: "dead",
         moveRight: "b2"
     },
     "b2": {
@@ -129,12 +129,12 @@ gameMap = {
         moveUp: "a4",
         moveDown: "c4",
         moveLeft: "b3",
-        moveRight: ""
+        moveRight: "dead"
     },
     "c1": {
         moveUp: "b1",
         moveDown: "d1",
-        moveLeft: "",
+        moveLeft: "dead",
         moveRight: "c2"
     },
     "c2": {
@@ -153,31 +153,31 @@ gameMap = {
         moveUp: "b4",
         moveDown: "d4",
         moveLeft: "c3",
-        moveRight: ""
+        moveRight: "dead"
     },
     "d1": {
         moveUp: "c1",
-        moveDown: "",
-        moveLeft: "",
+        moveDown: "dead",
+        moveLeft: "dead",
         moveRight: "d2"
     },
     "d2": {
         moveUp: "c2",
-        moveDown: "",
+        moveDown: "dead",
         moveLeft: "d1",
         moveRight: "d3"
     },
     "d3": {
         moveUp: "c3",
-        moveDown: "",
+        moveDown: "dead",
         moveLeft: "d2",
         moveRight: "d4"
     },
     "d4": {
         moveUp: "c4",
-        moveDown: "",
+        moveDown: "dead",
         moveLeft: "d3",
-        moveRight: ""
+        moveRight: "dead"
     },
 
 }
@@ -223,8 +223,11 @@ def player_move(playerAction):
 #more code to control the movement of the player
 def movement_controller(destination):
     playerOne.location = destination
-    print ("You have moved to the " + destination + ".")
-    print_location()
+    if destination == "dead":
+        print("You fell off the map. You died.")
+        sys.exit()
+    else:
+        print ("You have moved to the " + destination + ".")
 
 #for looking at or examining the spot... trivia questions go here
 #######LUIS STUFF HERE
