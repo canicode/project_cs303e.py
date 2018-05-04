@@ -1,0 +1,12 @@
+You are stuck in Boo's Mansion.
+The objective of the game is to find your way out.
+Move from room to room by correctly answering questions to search for the escape room.
+However, if you answer more than 4 questions incorrectly you will be stuck in Boo's Mansion
+FOREVERRR!!!
+The character you choose dictates the difficulty:
+Mario = Hard
+Luigi = Medium
+Kirby = Easy
+Here is the map of the game, the x marks where you will begin.
+The escape room is any one of the other 15 rooms
+If you choose a location outside of the map you will immediately lose the game!
