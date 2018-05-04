@@ -306,7 +306,35 @@ def get_trivia_questions():
                          "Who is Mario's doppelganger?":"Wario","Who kidnapped the princess in the original Super Mario?":"Bowser",
                          "Who created Mario?":"Shigeru Miyamoto","Who is Princess Peach's best friend?":"Princess Daisy",
                          "Who is Mario's banana-loving enemy?":"Donkey Kong","Who is Mario's brother and sidekick?":"Luigi"}
+
     
+def allow_trivia_tries():
+    while True:
+        try:
+            guess = int(input("Please enter your quess: "))
+
+        except ValueError:
+            print("Sorry, please put it into Arabic Numbers")
+            continue
+
+        else:
+            print("You are correct")
+            break
+
+    while True:
+        try:
+            alphaguess= str(input("Please enter your guess: "))
+
+        except NameError:
+            print("Sorry, please spell it out")
+            continue
+
+        else:
+            print("You are correct")
+            break
+
+allow_trivia_tries()
+
 #this is the actual game part
 def game():
     while playerOne.gameOver == False: #this keeps the game going until its over
