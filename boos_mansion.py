@@ -106,7 +106,7 @@ gameMap = {
         moveUp: "dead",
         moveDown: "b4",
         moveLeft: "b3",
-        moveRight: ""
+        moveRight: "dead"
     },
     "b1": {
         moveUp: "a1",
@@ -191,7 +191,8 @@ def print_location():
 
 #actions that the player can take PROMPT
 def prompt():
-    print( "You can move, go, travel, walk, and quit.")
+    is_it_solved()
+    print("You can move, go, travel, walk, and quit.")
     action = input("What would you like to do? >>> ")
     acceptableActions = ["move", "go", "travel", "walk", "quit"]
     #if they dont put in an acceptable action...
@@ -202,6 +203,13 @@ def prompt():
         sys.exit()
     elif action.lower() in ["move", "go", "travel", "walk"]:
         player_move(action.lower())
+
+def is_it_solved():
+    solvedOrNot = solvedPlaces[playerOne.location]
+    if solvedOrNot == True:
+        print("You have already solved this zone.")
+    else:
+        get_trivia_questions()
 
 
 #for moving the player with answers from the player
@@ -231,38 +239,21 @@ def movement_controller(destination):
         print ("You have moved to the " + destination + ".")
 
 
-#for looking at or examining the spot... trivia questions go here
-#######LUIS STUFF HERE
-def player_is_question_solved():
-    if gameMap[playerOne.location][solved] == True:
-        print("You have already solved this zone.")
-    else:
-        get_trivia_questions()
+
 
 def get_trivia_questions():
 
-    getQuestions = ["What was Mario's original name before he was named Mario?",
-                    "When was the first Mario game created?",
-                    "What kind of extinct animal is Yoshi?", "Who is Luigi's doppelganger?",
-                    "Who is Mario's doppelganger?",
-                    "Who kidnapped the princess in the original Super Mario?", "Who created Mario?",
-                    "Who is Princess Peach's best friend?",
-                    "Who is Mario's banana-loving enemy?", "Who is Mario's brother and sidekick?",
-                    "What game did Mario first appear in?",
-                    "Who did Mario originally rescue them?",
-                    "Are the Mario games the most successful video game series of all time?",
+    getQuestions = ["What was Mario's original name before he was named Mario?","When was the first Mario game created?",
+                    "What kind of extinct animal is Yoshi?","Who is Luigi's doppelganger?", "Who is Mario's doppelganger?",
+                    "Who kidnapped the princess in the original Super Mario?", "Who created Mario?", "Who is Princess Peach's best friend?",
+                    "Who is Mario's banana-loving enemy?", "Who is Mario's brother and sidekick?", "What game did Mario first appear in?",
+                    "Who did Mario originally rescue them?", "Are the Mario games the most successful video game series of all time?",
                     "Mario's first 3D platforming game is?", "Which game introduced the Cloud Flower?",
-                    "Which console hosted the Super Mario Maker game?",
-                    "What is the name of Mario’s aquatic backpack in Super Mario Sunshine?",
-                    "Who is Mario’s main enemy in Super Mario Sunshine?",
-                    "What game does baby Mario first make an appearance in?",
-                    "What Super Mario game is set in outer space?",
+                    "Which console hosted the Super Mario Maker game?"
                     ]
-    
-    getAnswers = ["jumpman", "1981", "dinosaur", "waluigi", "wario", "bowser",
-                  "shigeru miyamoto", "princess daisy", "donkey kong", "luigi", "donkey kong",
-                  "pauline", "yes", "super mario 64", "super mario galaxy", "nintindo wiiu",
-                  "FLUDD”, “Shadow","Mario”, “Yoshi’s, Island”, “Super Mario", "Galaxy",]
+    getAnswers = ["jumpman", "1981", "dinosaur", "waluigi", "wario", "bowser", "shigeru miyamoto", "princess daisy",
+                  "donkey kong", "luigi",  "pauline", "yes", "super mario 64", "super mario galaxy", "nintindo wiiu"
+                    ]
 
     for x in range(len(getQuestions)):
         print(getQuestions[x])
@@ -279,6 +270,7 @@ def get_trivia_questions():
 def game():
     while playerOne.gameOver == False: #this keeps the game going until its over
         prompt()
+
 
 
 #game setup
