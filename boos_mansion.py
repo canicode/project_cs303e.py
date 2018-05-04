@@ -275,12 +275,13 @@ def get_trivia_questions():
                     "Who is Mario’s main enemy in Super Mario Sunshine?",
                     "What game does baby Mario first make an appearance in?",
                     "What Super Mario game is set in outer space?",
-  ]
+    ]
+
 
     getAnswers = ["Jumpman", "1981", "Dinosaur", "Waluigi", "Wario", "Bowser",
-                  "Shigeru miyamoto", "Princess Daisy", "Donkey Kong", "Luigi", "Donkey Kong",
-                  "Pauline", "Yes", "Super Mario 64", "Super Mario Galaxy", "Nintindo WiiU",
-                  "FLUDD”, “Shadow","Mario”, “Yoshi’s, Island”, “Super Mario", "Galaxy",]
+                  "Shigeru Miyamoto", "Princess Daisy", "Donkey Kong", "Luigi",
+                  "Donkey Kong", "Pauline", "Yes", "Super Mario 64", "Super Mario Galaxy", "Nintindo WiiU",
+                  "FLUDD", "Shadow Mario", "Yoshi's Island", "Super Mario Galaxy"]
 
     for x in range(len(getQuestions)):
         print(getQuestions[x])
