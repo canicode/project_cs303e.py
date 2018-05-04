@@ -363,23 +363,23 @@ def game_setup():
         playerOne.coins = 80
 
     #introduction to the game
-    questionWelcome = "Welcome, " + playerName + ". " + "You are playing as " + playerCharacter + ". "
+    questionWelcome = "Welcome," + playerName + ". " + " You are playing as " + playerCharacter + ". "
     for words in questionWelcome:
         sys.stdout.write(words)
         sys.stdout.flush()
         time.sleep(0.05)
 
-    intro1 = "Welcome to Super Mario Code! \n"
+    intro1 = " Welcome to Super Mario Code! \n"
     for words in intro1:
         sys.stdout.write(words)
         sys.stdout.flush()
         time.sleep(0.01)
-    intro2 = "Make your way through the course to win the game.\n"
+    intro2 = " Make your way through the course to win the game.\n"
     for words in intro2:
         sys.stdout.write(words)
         sys.stdout.flush()
         time.sleep(0.01)
-    intro3 = "I hope you have fun, but... \n"
+    intro3 = " I hope you have fun, but... \n"
     for words in intro3:
         sys.stdout.write(words)
         sys.stdout.flush()
