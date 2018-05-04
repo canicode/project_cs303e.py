@@ -288,7 +288,7 @@ def player_move(playerAction):
 
 #more code to control the movement of the player
 def movement_controller(destination):
-    destination = playerOne.location
+    playerOne.location = destination
     print ("You have moved to the " + destination + ".")
     print_location()
 
