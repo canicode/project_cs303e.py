@@ -1,7 +1,7 @@
 import sys
 import os
 import time
-import random
+
 
 #Set up player with a class
 class player:
@@ -67,9 +67,6 @@ def help_menu():
 #------------------
 
 #navigating the map
-nameOfZone = ""
-description = "description"
-look = "examine"
 solved = False
 moveUp = "up"
 moveDown = "down"
@@ -84,9 +81,6 @@ solvedPlaces = {"a1": False, "a2": False, "a3": False, "a4": False,
 #setting up the map
 gameMap = {
     "a1": {
-        nameOfZone: "",
-        description: "Home",
-        look: "This is your home.",
         solved: False,
         moveUp: "",
         moveDown: "b1",
@@ -94,9 +88,6 @@ gameMap = {
         moveRight: "a2"
     },
     "a2": {
-        nameOfZone: "",
-        description: "",
-        look: "",
         solved: False,
         moveUp: "",
         moveDown: "b2",
@@ -104,9 +95,6 @@ gameMap = {
         moveRight: "a3"
     },
     "a3": {
-        nameOfZone: "",
-        description: "",
-        look: "",
         solved: False,
         moveUp: "",
         moveDown: "b3",
@@ -114,9 +102,6 @@ gameMap = {
         moveRight: "b4"
     },
     "a4": {
-        nameOfZone: "",
-        description: "Home",
-        look: "This is your home.",
         solved: False,
         moveUp: "",
         moveDown: "b4",
@@ -124,9 +109,6 @@ gameMap = {
         moveRight: ""
     },
     "b1": {
-        nameOfZone: "",
-        description: "",
-        look: "",
         solved: False,
         moveUp: "a1",
         moveDown: "c1",
@@ -134,9 +116,6 @@ gameMap = {
         moveRight: "b2"
     },
     "b2": {
-        nameOfZone: "",
-        description: "",
-        look: "",
         solved: False,
         moveUp: "a2",
         moveDown: "c2",
@@ -144,9 +123,6 @@ gameMap = {
         moveRight: "b3"
     },
     "b3": {
-        nameOfZone: "",
-        description: "",
-        look: "",
         solved: False,
         moveUp: "a3",
         moveDown: "c3",
@@ -154,9 +130,6 @@ gameMap = {
         moveRight: "b4"
     },
     "b4": {
-        nameOfZone: "",
-        description: "",
-        look: "",
         solved: False,
         moveUp: "a4",
         moveDown: "c4",
@@ -164,9 +137,6 @@ gameMap = {
         moveRight: ""
     },
     "c1": {
-        nameOfZone: "",
-        description: "",
-        look: "",
         solved: False,
         moveUp: "b1",
         moveDown: "d1",
@@ -174,9 +144,6 @@ gameMap = {
         moveRight: "c2"
     },
     "c2": {
-        nameOfZone: "",
-        description: "",
-        look: "",
         solved: False,
         moveUp: "b2",
         moveDown: "d2",
@@ -184,9 +151,6 @@ gameMap = {
         moveRight: "c3"
     },
     "c3": {
-        nameOfZone: "",
-        description: "",
-        look: "",
         solved: False,
         moveUp: "b3",
         moveDown: "d3",
@@ -194,9 +158,6 @@ gameMap = {
         moveRight: "c4"
     },
     "c4": {
-        nameOfZone: "",
-        description: "",
-        look: "",
         solved: False,
         moveUp: "b4",
         moveDown: "d4",
@@ -204,9 +165,6 @@ gameMap = {
         moveRight: ""
     },
     "d1": {
-        nameOfZone: "",
-        description: "",
-        look: "",
         solved: False,
         moveUp: "c1",
         moveDown: "",
@@ -214,9 +172,6 @@ gameMap = {
         moveRight: "d2"
     },
     "d2": {
-        nameOfZone: "",
-        description: "",
-        look: "",
         solved: False,
         moveUp: "c2",
         moveDown: "",
@@ -224,9 +179,6 @@ gameMap = {
         moveRight: "d3"
     },
     "d3": {
-        nameOfZone: "",
-        description: "",
-        look: "",
         solved: False,
         moveUp: "c3",
         moveDown: "",
@@ -234,9 +186,6 @@ gameMap = {
         moveRight: "d4"
     },
     "d4": {
-        nameOfZone: "",
-        description: "",
-        look: "",
         solved: False,
         moveUp: "c4",
         moveDown: "",
@@ -250,14 +199,13 @@ gameMap = {
 #this prints where the player is at in the map
 def print_location():
     print(playerOne.location.upper())
-    print( gameMap[playerOne.location][description])
 
 
 #actions that the player can take PROMPT
 def prompt():
-    print( "You can move, go, travel, walk, quit, examine, inspect, and look.")
+    print( "You can move, go, travel, walk, and quit.")
     action = input("What would you like to do? >>> ")
-    acceptableActions = ["move", "go", "travel", "walk", "quit", "examine", "inspect", "look"]
+    acceptableActions = ["move", "go", "travel", "walk", "quit"]
     #if they dont put in an acceptable action...
     while action.lower() not in acceptableActions:
         print("Undefined action. Please enter an acceptable action.")
@@ -266,8 +214,7 @@ def prompt():
         sys.exit()
     elif action.lower() in ["move", "go", "travel", "walk"]:
         player_move(action.lower())
-    elif action.lower() in ["examine", "inspect", "look"]:
-        player_look(action.lower())
+
 
 #for moving the player with answers from the player
 def player_move(playerAction):
@@ -294,52 +241,30 @@ def movement_controller(destination):
 
 #for looking at or examining the spot... trivia questions go here
 #######LUIS STUFF HERE
-def player_look():
+def player_is_question_solved():
     if gameMap[playerOne.location][solved] == True:
         print("You have already solved this zone.")
     else:
         print("")
-        
+
 def get_trivia_questions():
-    questions_answers = {"What was Mario's original name before he was named Mario?":"Jumpan","When was the first Mario game created?":"1981",
-                         "What kind of extinct animal is Yoshi?":"Dinosaur","Who is Luigi's doppelganger?":"Waluigi",
-                         "Who is Mario's doppelganger?":"Wario","Who kidnapped the princess in the original Super Mario?":"Bowser",
-                         "Who created Mario?":"Shigeru Miyamoto","Who is Princess Peach's best friend?":"Princess Daisy",
-                         "Who is Mario's banana-loving enemy?":"Donkey Kong","Who is Mario's brother and sidekick?":"Luigi",
-                         "What game did Mario first appear in?":"Donkey Kong", "Who did Mario originally rescue?":"Pauline", 
-                         "Are the Mario games the most successful video game series of all time?":"Yes",
-                         "Mario's first 3D platforming game is?":"Super Mario 64", "Which game introduced the Cloud Flower?": "Super Mario Galaxy",
-                         "Which console hosted the Super Mario Maker game?":"Nintindo WiiU"}
 
-"}
+    getQuestions = ["What was Mario's original name before he was named Mario?","When was the first Mario game created?",
+                "What kind of extinct animal is Yoshi?","Who is Luigi's doppelganger?", "Who is Mario's doppelganger?",
+                "Who kidnapped the princess in the original Super Mario?", "Who created Mario?", "Who is Princess Peach's best friend?",
+                 "Who is Mario's banana-loving enemy?", "Who is Mario's brother and sidekick?"]
+    getAnswers = ["jumpman", "1981", "dinosaur", "waluigi", "wario", "bowser", "shigeru miyamoto", "princess daisy", "donkey kong", "luigi"]
 
-    
-def allow_trivia_tries():
-    while True:
-        try:
-            guess = int(input("Please enter your quess: "))
-
-        except ValueError:
-            print("Sorry, please put it into Arabic Numbers")
-            continue
-
+    for x in range(len(getQuestions)):
+        print(getQuestions[x])
+        playerAnswer = input(">>> ")
+        if playerAnswer.lower() == getAnswers[x]:
+            print("good job")
         else:
-            print("You are correct")
-            break
+            playerAnswer = input("Try again >>> ")
+get_trivia_questions()
 
-    while True:
-        try:
-            alphaguess= str(input("Please enter your guess: "))
 
-        except NameError:
-            print("Sorry, please spell it out")
-            continue
-
-        else:
-            print("You are correct")
-            break
-
-allow_trivia_tries()
 
 #this is the actual game part
 def game():
@@ -380,7 +305,7 @@ def game_setup():
         playerOne.character = playerCharacter
         print("You are now " + playerCharacter)
     while playerCharacter.lower() not in validCharacters:
-        playerCharacter = input("Unknown character. Please enter a character in this game. >>>")
+        playerCharacter = input("Unknown character. Please enter a character in this game. >>> \n")
         if playerCharacter.lower() in validCharacters:
             playerOne.character = playerCharacter
             print("You are now " + playerCharacter + ".")
@@ -433,4 +358,6 @@ def game_setup():
     game()
 
 title_screen()
+
+
 
