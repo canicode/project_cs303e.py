@@ -305,7 +305,13 @@ def get_trivia_questions():
                          "What kind of extinct animal is Yoshi?":"Dinosaur","Who is Luigi's doppelganger?":"Waluigi",
                          "Who is Mario's doppelganger?":"Wario","Who kidnapped the princess in the original Super Mario?":"Bowser",
                          "Who created Mario?":"Shigeru Miyamoto","Who is Princess Peach's best friend?":"Princess Daisy",
-                         "Who is Mario's banana-loving enemy?":"Donkey Kong","Who is Mario's brother and sidekick?":"Luigi"}
+                         "Who is Mario's banana-loving enemy?":"Donkey Kong","Who is Mario's brother and sidekick?":"Luigi",
+                         "What game did Mario first appear in?":"Donkey Kong", "Who did Mario originally rescue?":"Pauline", 
+                         "Are the Mario games the most successful video game series of all time?":"Yes",
+                         "Mario's first 3D platforming game is?":"Super Mario 64", "Which game introduced the Cloud Flower?": "Super Mario Galaxy",
+                         "Which console hosted the Super Mario Maker game?":"Nintindo WiiU"}
+
+"}
 
     
 def allow_trivia_tries():
