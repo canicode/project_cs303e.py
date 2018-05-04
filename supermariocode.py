@@ -42,32 +42,29 @@ def title_screen():
     title_screen()
 
 def help_menu():
-    #instructions = "You are stuck in Boo's Mansion.\nThe objective of the game is to find your way out.\nMove from room to room by correctly answering questions to search for the escape room.\nHowever, if you answer more than 4 questions incorrectly you will be stuck in Boo's Mansion\nFOREVERRR!!!\nHere is the map of the game, The x marks where you will begin.\nThe escape room is any one of the other 15 rooms"
-    file = open('instructions.txt', 'r')
-    for x in file:
-        for words in x:
-            sys.stdout.write(words)
-            sys.stdout.flush()
-            time.sleep(0.05)
-    print(' --- --- --- --- ')
-    print('| x |   |   |   |')
-    print(' --- --- --- --- ')
-    print('|   |   |   |   |')
-    print(' --- --- --- --- ')
-    print('|   |   |   |   |')
-    print(' --- --- --- --- ')
-    print('|   |   |   |   |')
-    print(' --- --- --- --- ')
-    print('Please type "ok" to continue:')
-    answer = input('')
-    if answer.lower() == 'ok':
-        title_screen()
-    else:
-        while answer.lower() != 'ok':
-            print('Invalid response, please type "ok" to continue')
-            answer = input('')
-        title_screen()
+    print("Hello. Welcome to Super Mario Code.")
+    print("You can play as Mario, Luigi, Kerby, or Bowser")
+    print("To move, use up, down, left, or right.")
+    print("To inspect a spot in the map, use examine.")
+    print("Good luck, and don't die!")
+    title_screen()
 
+
+
+
+
+#creating the map - grid system
+
+#  1   2   3   4
+#------------------
+#|   |   |   |   |  a
+#------------------
+#|   |   |   |   |  b
+#------------------
+#|   |   |   |   |  c
+#------------------
+#|   |   |   |   |  d
+#------------------
 
 #navigating the map
 nameOfZone = ""
@@ -302,8 +299,14 @@ def player_look():
         print("You have already solved this zone.")
     else:
         print("")
-
-
+        
+def questions_answers():
+    questions_answers = {"What was Mario's original name before he was named Mario?":Jumpan,"When was the first Mario game created?":1981,
+                         "What kind of extinct animal is Yoshi?":Dinosaur,"Who is Luigi's doppelganger?":Waluigi,
+                         "Who is Mario's doppelganger?":Wario,"Who kidnapped the princess in the original Super Mario?":Bowser,
+                         "Who created Mario?":Shigeru Miyamoto,"Who is Princess Peach's best friend?":Princess Daisy,
+                         "Who is Mario's banana-loving enemy?":Donkey Kong,"Who is Mario's brother and sidekick?":Luigi}
+    
 #this is the actual game part
 def game():
     while playerOne.gameOver == False: #this keeps the game going until its over
@@ -315,7 +318,7 @@ def game_setup():
     os.system('cls')
 
     #getting the players name
-    questionName = "Hello PLAYER, what is your name?\n"
+    questionName = "Hello PLAYER, what is your name?"
     #cool thing i learned online to make it print fancy like a game
     for words in questionName:
         sys.stdout.write(words)
@@ -330,7 +333,7 @@ def game_setup():
         sys.stdout.write(words)
         sys.stdout.flush()
         time.sleep(0.01)
-    questionCharacter = "What character would you like to use, " + playerName + "?\n"
+    questionCharacter = "What character would you like to use, " + playerName + "?"
     for words in questionCharacter:
         sys.stdout.write(words)
         sys.stdout.flush()
@@ -343,7 +346,7 @@ def game_setup():
         playerOne.character = playerCharacter
         print("You are now " + playerCharacter)
     while playerCharacter.lower() not in validCharacters:
-        playerCharacter = input("Unknown character. Please enter a character in this game. >>> \n")
+        playerCharacter = input("Unknown character. Please enter a character in this game. >>>")
         if playerCharacter.lower() in validCharacters:
             playerOne.character = playerCharacter
             print("You are now " + playerCharacter + ".")
@@ -363,23 +366,23 @@ def game_setup():
         playerOne.coins = 80
 
     #introduction to the game
-    questionWelcome = "Welcome," + playerName + ". " + " You are playing as " + playerCharacter + ". "
+    questionWelcome = "Welcome, " + playerName + ". " + "You are playing as " + playerCharacter + ". "
     for words in questionWelcome:
         sys.stdout.write(words)
         sys.stdout.flush()
         time.sleep(0.05)
 
-    intro1 = " Welcome to Super Mario Code! \n"
+    intro1 = "Welcome to Super Mario Code! \n"
     for words in intro1:
         sys.stdout.write(words)
         sys.stdout.flush()
         time.sleep(0.01)
-    intro2 = " Make your way through the course to win the game.\n"
+    intro2 = "Make your way through the course to win the game.\n"
     for words in intro2:
         sys.stdout.write(words)
         sys.stdout.flush()
         time.sleep(0.01)
-    intro3 = " I hope you have fun, but... \n"
+    intro3 = "I hope you have fun, but... \n"
     for words in intro3:
         sys.stdout.write(words)
         sys.stdout.flush()
