@@ -245,13 +245,15 @@ def get_trivia_questions():
                 "Who is Mario's banana-loving enemy?", "Who is Mario's brother and sidekick?", "What game did Mario first appear in?",
                 "Who did Mario originally rescue them?", "Are the Mario games the most successful video game series of all time?",
                 "Mario's first 3D platforming game is?", "Which game introduced the Cloud Flower?",
-                "Which console hosted the Super Mario Maker game?"
+                "Which console hosted the Super Mario Maker game?",“What is the name of Mario’s aquatic backpack in Super Mario Sunshine?”,
+                “Who is Mario’s main enemy in Super Mario Sunshine?”,“What game does baby Mario first make an appearance in?”,
+                “What Super Mario game is set in outer space?"
                 ]
     
     
     getAnswers = ["jumpman", "1981", "dinosaur", "waluigi", "wario", "bowser",
                   "shigeru miyamoto", "princess daisy", "donkey kong", "luigi", "donkey kong",
-                  "pauline", "yes", "sper mario 64", "super mario galaxy", "nintindo wiiu"
+                  "pauline", "yes", "sper mario 64", "super mario galaxy", "nintindo wiiu",“FLUDD”,“Shadow Mario”,“Yoshi’s Island”,“Super Mario Galaxy”
                   ]
 
     for x in range(len(getQuestions)):
