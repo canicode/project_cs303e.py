@@ -281,7 +281,7 @@ def game_setup():
     playerOne.name = playerName
 
     # getting the character the player wants to use
-    characterOptions = "The characters you can play as are Mario, Luigi, and Kerby. \n"
+    characterOptions = "The characters you can play as are Mario, Luigi, or Kerby. \n"
     for words in characterOptions:
         sys.stdout.write(words)
         sys.stdout.flush()
