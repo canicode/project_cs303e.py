@@ -18,7 +18,7 @@ playerOne = player()
 #ENTER CODE HERE
 
 def title_screen():
-    print("Welcome to Boo's Mansion Maze!")
+    print("Welcome to Boo's Mansion Maze.")
     print("PLAY")
     print("HELP")
     print("QUIT")
@@ -71,6 +71,7 @@ def help_menu():
 
 
 #navigating the map
+solved = False
 moveUp = "up"
 moveDown = "down"
 moveLeft = "left"
@@ -81,7 +82,7 @@ solvedPlaces = {"a1": False, "a2": False, "a3": False, "a4": False,
                 "b1": False, "b2": False, "b3": False, "b4": False,
                 "c1": False, "c2": False, "c3": False, "c4": False,
                 "d1": False, "d2": False, "d3": False, "d4": False,}
-#setting up the map and where you can move
+#setting up the map
 gameMap = {
     "a1": {
         moveUp: "dead",
@@ -105,7 +106,7 @@ gameMap = {
         moveUp: "dead",
         moveDown: "b4",
         moveLeft: "b3",
-        moveRight: "dead"
+        moveRight: ""
     },
     "b1": {
         moveUp: "a1",
@@ -229,32 +230,28 @@ def movement_controller(destination):
     else:
         print ("You have moved to the " + destination + ".")
 
+
 #for looking at or examining the spot... trivia questions go here
 #######LUIS STUFF HERE
 def player_is_question_solved():
     if gameMap[playerOne.location][solved] == True:
         print("You have already solved this zone.")
     else:
-        print("")
+        get_trivia_questions()
 
 def get_trivia_questions():
 
     getQuestions = ["What was Mario's original name before he was named Mario?","When was the first Mario game created?",
-                "What kind of extinct animal is Yoshi?","Who is Luigi's doppelganger?", "Who is Mario's doppelganger?",
-                "Who kidnapped the princess in the original Super Mario?", "Who created Mario?", "Who is Princess Peach's best friend?",
-                "Who is Mario's banana-loving enemy?", "Who is Mario's brother and sidekick?", "What game did Mario first appear in?",
-                "Who did Mario originally rescue them?", "Are the Mario games the most successful video game series of all time?",
-                "Mario's first 3D platforming game is?", "Which game introduced the Cloud Flower?",
-                "Which console hosted the Super Mario Maker game?",“What is the name of Mario’s aquatic backpack in Super Mario Sunshine?”,
-                “Who is Mario’s main enemy in Super Mario Sunshine?”,“What game does baby Mario first make an appearance in?”,
-                “What Super Mario game is set in outer space?"
-                ]
-    
-    
-    getAnswers = ["jumpman", "1981", "dinosaur", "waluigi", "wario", "bowser",
-                  "shigeru miyamoto", "princess daisy", "donkey kong", "luigi", "donkey kong",
-                  "pauline", "yes", "sper mario 64", "super mario galaxy", "nintindo wiiu",“FLUDD”,“Shadow Mario”,“Yoshi’s Island”,“Super Mario Galaxy”
-                  ]
+                    "What kind of extinct animal is Yoshi?","Who is Luigi's doppelganger?", "Who is Mario's doppelganger?",
+                    "Who kidnapped the princess in the original Super Mario?", "Who created Mario?", "Who is Princess Peach's best friend?",
+                    "Who is Mario's banana-loving enemy?", "Who is Mario's brother and sidekick?", "What game did Mario first appear in?",
+                    "Who did Mario originally rescue them?", "Are the Mario games the most successful video game series of all time?",
+                    "Mario's first 3D platforming game is?", "Which game introduced the Cloud Flower?",
+                    "Which console hosted the Super Mario Maker game?"
+                    ]
+    getAnswers = ["jumpman", "1981", "dinosaur", "waluigi", "wario", "bowser", "shigeru miyamoto", "princess daisy",
+                  "donkey kong", "luigi",  "pauline", "yes", "super mario 64", "super mario galaxy", "nintindo wiiu"
+                    ]
 
     for x in range(len(getQuestions)):
         print(getQuestions[x])
@@ -263,7 +260,7 @@ def get_trivia_questions():
             print("good job")
         else:
             playerAnswer = input("Try again >>> ")
-get_trivia_questions()
+
 
 
 
@@ -288,7 +285,7 @@ def game_setup():
     playerOne.name = playerName
 
     # getting the character the player wants to use
-    characterOptions = "The characters you can play as are Mario, Luigi, or Kerby. \n"
+    characterOptions = "The characters you can play as are Mario, Luigi, and Kerby. \n"
     for words in characterOptions:
         sys.stdout.write(words)
         sys.stdout.flush()
@@ -319,9 +316,8 @@ def game_setup():
     if playerOne is "kerby":
         playerOne.hp = 5
 
-
     #introduction to the game
-    questionWelcome = "Welcome, " + playerName + ". " + "You are playing as " + playerCharacter + ". "
+    questionWelcome = "Welcome, " + playerName + ". " + "You are playing as " + playerCharacter + ". \n"
     for words in questionWelcome:
         sys.stdout.write(words)
         sys.stdout.flush()
@@ -354,6 +350,7 @@ def game_setup():
     game()
 
 title_screen()
+
 
 
 
